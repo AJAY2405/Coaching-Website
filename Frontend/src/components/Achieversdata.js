@@ -1,9 +1,3 @@
-/* ================= STUDENT ACHIEVERS DATA ================= */
-// A fixed list — edit this array directly to add, remove, or update
-// students. Each object has exactly: id, name, image, mark, achievement.
-// Both the HomeSection card carousel and the StudentDetail page read
-// from this same array.
-
 const students = [
   {
     id: 1,

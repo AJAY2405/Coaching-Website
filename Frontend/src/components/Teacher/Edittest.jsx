@@ -11,7 +11,7 @@ function EditTest() {
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  // ✅ NEW: duration in minutes
+  // NEW: duration in minutes
   const [duration, setDuration] = useState(30);
   const [questions, setQuestions] = useState([]);
 

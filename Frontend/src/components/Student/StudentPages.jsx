@@ -40,7 +40,7 @@ export default function StudentPage() {
     return (
       <div className="p-12 flex flex-col items-center text-red-500 font-semibold">
         <AlertCircle className="w-10 h-10 mb-2" />
-        ❌ Error: {err}
+         Error: {err}
       </div>
     );
 

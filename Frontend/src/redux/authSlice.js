@@ -15,7 +15,7 @@ const authSlice = createSlice({
         setUser: (state, action) => {
             state.user = action.payload;
         },
-        // ✅ Clear user data on logout
+        //  Clear user data on logout
         logout: (state) => {
             state.user = null;
             state.loading = false;

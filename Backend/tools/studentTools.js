@@ -2,9 +2,9 @@ import AiTestResult from "../models/aitestResult.model.js";
 import Result from "../models/Result.js";
 import { User } from "../models/user_model.js";
 
-/**
- * Get all AI-generated test results for the logged-in student.
- */
+
+//  Get all AI-generated test results for the logged-in student.
+ 
 export const getMyAiTestResults = async (studentId) => {
   const results = await AiTestResult.find({ student: studentId })
     .populate("test", "title subject topic difficulty totalMarks")
@@ -23,11 +23,11 @@ export const getMyAiTestResults = async (studentId) => {
   }));
 };
 
-/**
- * Get all teacher-created ("normal") test results for the logged-in student.
- * Result is linked by studentEmail (not ObjectId), so we resolve the
- * student's email from the User model first.
- */
+
+//   Get all teacher-created ("normal") test results for the logged-in student.
+//   Result is linked by studentEmail (not ObjectId), so we resolve the
+//   student's email from the User model first.
+ 
 export const getMyTestResults = async (studentId) => {
   const user = await User.findById(studentId).select("email").lean();
   if (!user) return [];
@@ -93,9 +93,8 @@ export const getMyProgressSummary = async (studentId) => {
   };
 };
 
-/**
- * Basic profile info for the logged-in student. Never returns the password.
- */
+  // Basic profile info for the logged-in student. Never returns the password.
+ 
 export const getMyProfile = async (studentId) => {
   const user = await User.findById(studentId)
     .select("fullname email role description createdAt")

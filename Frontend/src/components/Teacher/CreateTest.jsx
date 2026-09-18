@@ -10,14 +10,14 @@ function CreateTest() {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  // ✅ NEW: duration in minutes, defaults to 30
+  //  NEW: duration in minutes, defaults to 30
   const [duration, setDuration] = useState(30);
   const [questions, setQuestions] = useState([
     {
       question: "",
       options: { A: "", B: "", C: "", D: "" },
       correctAnswer: "",
-      image: null, // ⬅️ optional image
+      image: null, 
     },
   ]);
 

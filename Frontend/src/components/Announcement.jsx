@@ -262,12 +262,12 @@ export default function Announcement() {
               📅 {selected.date}
             </p>
 
-            {/* ✅ NEW: long-form detailed content, split into paragraphs */}
+            {/*  NEW: long-form detailed content, split into paragraphs */}
             <div className="leading-relaxed text-gray-700 dark:text-gray-300 space-y-4 whitespace-pre-line">
               {selected.details}
             </div>
 
-            {/* ✅ NEW: Apply / Register button linked to a Google Form */}
+            {/*  NEW: Apply / Register button linked to a Google Form */}
             {selected.applyLink && (
               <div className="mt-10 flex justify-center">
                 <a

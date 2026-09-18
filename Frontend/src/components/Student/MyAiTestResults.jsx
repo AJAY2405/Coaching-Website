@@ -21,9 +21,9 @@ const MyAiTestResults = () => {
 
   const navigate = useNavigate();
 
-  // =========================
+  
   // Fetch Results
-  // =========================
+ 
   useEffect(() => {
     const fetchResults = async () => {
       try {
@@ -45,9 +45,7 @@ const MyAiTestResults = () => {
     fetchResults();
   }, []);
 
-  // =========================
   // Statistics
-  // =========================
 
   const totalTests = results.length;
 
@@ -72,9 +70,7 @@ const MyAiTestResults = () => {
     );
   }, [results]);
 
-  // =========================
   // Filter Results
-  // =========================
 
   const filteredResults = useMemo(() => {
     let filtered = [...results];

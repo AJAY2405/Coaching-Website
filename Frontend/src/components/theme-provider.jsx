@@ -12,7 +12,7 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }) {
-  // ✅ Safe initialization (prevents flicker & invalid values)
+  //  Safe initialization (prevents flicker & invalid values)
   const [theme, setTheme] = useState(() => {
     // First check if there's a stored value
     const stored = localStorage.getItem(storageKey);
@@ -26,7 +26,7 @@ export function ThemeProvider({
 
   const [resolvedTheme, setResolvedTheme] = useState("light");
 
-  // ✅ Apply theme
+  //  Apply theme
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
@@ -46,7 +46,7 @@ export function ThemeProvider({
     localStorage.setItem(storageKey, theme);
   }, [theme]);
 
-  // ✅ Listen to system theme changes (only when theme = system)
+  //  Listen to system theme changes (only when theme = system)
   useEffect(() => {
     if (theme !== "system") return;
 
@@ -67,7 +67,7 @@ export function ThemeProvider({
     return () => media.removeEventListener("change", handleChange);
   }, [theme]);
 
-  // ✅ Context value
+  // Context value
   const value = {
     theme,
     resolvedTheme,
@@ -84,7 +84,7 @@ export function ThemeProvider({
   );
 }
 
-// ✅ Custom Hook
+//  Custom Hook
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 

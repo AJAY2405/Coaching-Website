@@ -4,8 +4,6 @@ import { useTheme } from "./theme-provider"; // adjust path to match your projec
 function About() {
   const { theme } = useTheme();
 
-  // Resolve "system" to an actual light/dark value so the signature
-  // always shows the correct image.
   const isDark =
     theme === "dark" ||
     (theme === "system" &&

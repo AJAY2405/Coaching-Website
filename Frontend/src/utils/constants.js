@@ -27,5 +27,5 @@ export const AITEST_API_END_POINT = `${BASE_URL}/api/v1/aitest`;
 
 
 
-// ✅ New Notice API endpoint
+//  New Notice API endpoint
 export const NOTICE_API_END_POINT = `${BASE_URL}/api/v1/notices`;

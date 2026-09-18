@@ -14,8 +14,7 @@ export const createTest = async (req, res) => {
       questions = JSON.parse(questions);
     }
 
-    // NEW: duration comes in as a string from form-data — coerce to Number.
-    // Falls back to the schema default (30) if not provided or invalid.
+  
     const parsedDuration = Number(duration);
     const finalDuration =
       Number.isFinite(parsedDuration) && parsedDuration > 0
@@ -233,7 +232,7 @@ export const submitTestAnswer = async (req, res) => {
       score,
       percentage,
       submittedAt: new Date(),
-      answers: answers || [], // ✅ FIX: save the student's actual picks per question index, needed for review page
+      answers: answers || [], // FIX: save the student's actual picks per question index, needed for review page
     });
 
     res.status(201).json({
@@ -259,7 +258,7 @@ export const getTestSubmissions = async (req, res) => {
   }
 };
 
-// ✅ NEW: Get a full review of a student's attempt — questions, options,
+// NEW: Get a full review of a student's attempt — questions, options,
 // correct answers, and what the student actually picked, keyed by index.
 export const getTestReview = async (req, res) => {
   try {

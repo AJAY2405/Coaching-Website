@@ -9,11 +9,11 @@ import {
   AlertCircle,
   Search,
   SlidersHorizontal,
-  ChevronRight, // ✅ NEW: visual affordance that the card is clickable
+  ChevronRight, // NEW: visual affordance that the card is clickable
 } from "lucide-react";
 
 export default function ProgressPage() {
-  const navigate = useNavigate(); // ✅ NEW
+  const navigate = useNavigate(); 
 
   const [results, setResults] = useState([]);
   const [summary, setSummary] = useState({
@@ -111,7 +111,7 @@ export default function ProgressPage() {
     return (
       <div className="p-12 flex flex-col items-center text-red-500 dark:text-red-400 font-semibold bg-white dark:bg-black min-h-screen">
         <AlertCircle className="w-10 h-10 mb-2" />
-        ❌ Error: {err}
+         Error: {err}
       </div>
     );
 

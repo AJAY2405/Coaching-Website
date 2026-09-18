@@ -82,7 +82,7 @@ const SliderRow = ({ data, type, title }) => {
   const [index, setIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
 
-  // 🔥 Responsive
+  //  Responsive
   useEffect(() => {
     const updateView = () => {
       if (window.innerWidth < 640) setCardsPerView(1);
@@ -95,7 +95,7 @@ const SliderRow = ({ data, type, title }) => {
     return () => window.removeEventListener("resize", updateView);
   }, []);
 
-  // 🔥 Auto Slide
+  //  Auto Slide
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev >= data.length - cardsPerView ? 0 : prev + 1));

@@ -1,5 +1,3 @@
-
-// src/components/Layout.jsx
 import React, { useState } from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "./Navbar";

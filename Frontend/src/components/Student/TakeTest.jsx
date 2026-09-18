@@ -20,7 +20,6 @@ export default function TakeTest() {
   const [stage, setStage] = useState("info");
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  // ✅ NEW: tracks which question indices have been viewed at least once,
   // so we can distinguish "skipped" (visited, no answer) from "not visited yet"
   const [visited, setVisited] = useState(new Set());
 
@@ -64,7 +63,7 @@ export default function TakeTest() {
     };
   }, []);
 
-  // ✅ NEW: whenever the current question changes (during the question stage),
+  // NEW: whenever the current question changes (during the question stage),
   // mark it as visited so its circle can turn yellow if left unanswered.
   useEffect(() => {
     if (stage !== "question") return;
@@ -128,7 +127,7 @@ export default function TakeTest() {
     }
   };
 
-  // ✅ NEW: jump directly to a question via its circle
+  //  NEW: jump directly to a question via its circle
   const jumpToQuestion = (idx) => {
     setCurrentQuestion(idx);
   };
@@ -194,7 +193,7 @@ export default function TakeTest() {
   const totalQuestions = test.questions.length;
   const isLastQuestion = currentQuestion === totalQuestions - 1;
 
-  // ✅ NEW: circle color logic
+  // NEW: circle color logic
   // - answered → green
   // - visited but not answered (skipped) → yellow
   // - not visited yet → gray
@@ -304,7 +303,7 @@ export default function TakeTest() {
               </span>
             </div>
 
-            {/* ✅ NEW: Circle question navigator — replaces the linear progress bar */}
+            {/* NEW: Circle question navigator — replaces the linear progress bar */}
             <div className="flex flex-wrap gap-2 mb-4">
               {test.questions.map((_, idx) => {
                 const status = getCircleStatus(idx);

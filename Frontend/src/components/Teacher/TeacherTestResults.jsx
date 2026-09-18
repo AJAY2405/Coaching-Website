@@ -47,7 +47,7 @@ const TeacherTestResults = () => {
   useEffect(() => {
     let data = [...submissions];
 
-    // ✅ Time filter
+    // Time filter
     if (timeFilter) {
       const now = new Date();
       let cutoff = new Date();
@@ -85,7 +85,7 @@ const TeacherTestResults = () => {
       }
     }
 
-    // ✅ Percentage filter
+    // Percentage filter
     if (percentageFilter) {
       const threshold = parseInt(percentageFilter, 10);
       data = data.filter((s) => s.percentage >= threshold);
@@ -159,7 +159,7 @@ const TeacherTestResults = () => {
             Submissions
           </h2>
 
-          {/* 🔽 Filters */}
+          {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <select
               value={timeFilter}

@@ -107,7 +107,7 @@ export default function Analysis() {
     );
   }
 
-  // ✅ FIX: stripes now keyed on the unique idx, not the (possibly
+  //  FIX: stripes now keyed on the unique idx, not the (possibly
   // duplicate) date string
   const stripes = [];
 

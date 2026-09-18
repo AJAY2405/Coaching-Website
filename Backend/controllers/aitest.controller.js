@@ -72,7 +72,7 @@ Return ONLY valid JSON array, no markdown, in this exact format:
 
     res.status(201).json({ success: true, aiTest });
   } catch (err) {
-    console.error("❌ AI TEST GENERATION ERROR:", err); // full error object
+    console.error(" AI TEST GENERATION ERROR:", err); // full error object
     res.status(500).json({ success: false, message: err.message });
   }
 };
@@ -126,7 +126,7 @@ export const submitAiTest = async (req, res) => {
 
     const percentage = Number(((score / test.questions.length) * 100).toFixed(2));
 
-    // 👇 persist the result
+    //  persist the result
     await AiTestResult.create({
       test: test._id,
       student: req.id,
