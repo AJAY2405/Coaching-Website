@@ -24,6 +24,7 @@ const app = express();
 app.use(cors({
   origin: [
   "http://localhost:5173",
+  "https://coaching-website-beta-one.vercel.app",
   "https://mangaldeep-online.vercel.app"
 ], // frontend URL
   // origin: "exam-frontend-beta.vercel.app", // frontend URL
