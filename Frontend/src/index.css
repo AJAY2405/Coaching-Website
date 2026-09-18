@@ -1,0 +1,45 @@
+@import "tailwindcss";
+/* @import "tw-animate-css"; */
+
+@custom-variant dark (&:is(.dark *));
+
+
+/* Chrome, Safari and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+body {
+  -ms-overflow-style: none;
+}
+body {
+  zoom: 80%;
+}
+
+/* 
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* ✅ Enable class-based dark mode (Tailwind v4 defaults to OS-only media-query dark mode).
+   This makes `dark:` classes respond to the .dark class on <html> that theme-provider.jsx toggles. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ...rest of your existing CSS below ... */
+
