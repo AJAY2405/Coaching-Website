@@ -45,9 +45,9 @@ export const getMyTestResults = async (studentId) => {
   }));
 };
 
-/**
- * Combined progress summary across both AI tests and normal tests.
- */
+
+//  Combined progress summary across both AI tests and normal tests.
+ 
 export const getMyProgressSummary = async (studentId) => {
   const [aiResults, normalResults] = await Promise.all([
     getMyAiTestResults(studentId),

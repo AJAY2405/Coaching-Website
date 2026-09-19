@@ -405,7 +405,7 @@ function HomeSection() {
       <section className="flex justify-center">
         <button
           onClick={() => navigate("/announcement")}
-          className="px-6 py-3 rounded-full bg-orange-500 text-white hover:bg-orange-600"
+          className="cursor-pointer px-6 py-3 rounded-full bg-orange-500 text-white hover:bg-orange-600"
         >
           Announcements
         </button>

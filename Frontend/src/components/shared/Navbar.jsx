@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -36,12 +35,9 @@ const Navbar = () => {
   const location = useLocation();
   const { theme, setTheme } = useTheme();
 
-  // ✅ Single source of truth for open/closed — used on every screen size now.
-  // true = sidebar visible; false = collapsed (icon rail on desktop, hidden on mobile)
+
   const [open, setOpen] = useState(true);
 
-  // Resolve "system" to an actual light/dark value so the toggle
-  // button always shows (and switches to) a concrete theme.
   const isDark =
     theme === "dark" ||
     (theme === "system" &&
@@ -98,11 +94,11 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ✅ floating button to reopen the sidebar when it's fully hidden on mobile */}
+      {/*  floating button to reopen the sidebar when it's fully hidden on mobile */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden fixed top-4 left-4 z-50 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 shadow-md rounded-lg p-2 text-gray-700 dark:text-gray-300"
+          className="cursor-pointer md:hidden fixed top-4 left-4 z-50 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 shadow-md rounded-lg p-2 text-gray-700 dark:text-gray-300"
         >
           <PanelLeftOpen size={20} />
         </button>
@@ -116,7 +112,7 @@ const Navbar = () => {
         />
       )}
 
-      {/* 🔹 Sidebar — the ONLY nav element now, no separate top navbar */}
+      {/*  Sidebar — the ONLY nav element now, no separate top navbar */}
       <aside
         className={`bg-white dark:bg-black border-r border-gray-200 dark:border-gray-800 fixed top-0 left-0 h-full z-40
         transform transition-all duration-300 flex flex-col
@@ -160,7 +156,7 @@ const Navbar = () => {
           {user?.role === "student" && (
             <>
               <NavItem to="/test" icon={ClipboardList} label="Test" />
-    <NavItem to="/student/ai-tests" icon={Sparkles} label="AI Test" />
+      <NavItem to="/student/ai-tests" icon={Sparkles} label="AI Test" />
     <NavItem to="/student/ai-test-results" icon={TrendingUp} label="AI Results" />
     <NavItem to="/notes" icon={FileText} label="Notes" />
     <NavItem to="/progress" icon={TrendingUp} label="My Progress" />
@@ -188,11 +184,11 @@ const Navbar = () => {
           {user ? (
             <div className="flex flex-col gap-1">
 
-              {/* 🌙 Theme toggle (replaces old Settings link) */}
+              {/*  Theme toggle (replaces old Settings link) */}
               <div className="relative group">
                 <button
                   onClick={toggleTheme}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition ${
+                  className={`cursor-pointer w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition ${
                     collapsed ? "justify-center" : ""
                   }`}
                 >
@@ -231,7 +227,7 @@ const Navbar = () => {
               <div className="relative group">
                 <button
                   onClick={logoutHandler}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition ${
+                  className={`cursor-pointer w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition ${
                     collapsed ? "justify-center" : ""
                   }`}
                 >
@@ -248,12 +244,12 @@ const Navbar = () => {
           ) : (
             <div className={`flex flex-col gap-2 ${collapsed ? "items-center" : ""}`}>
               <Link to="/login" className="w-full">
-                <Button variant="outline" className="w-full text-orange-400">
+                <Button variant="outline" className="cursor-pointer w-full text-orange-400">
                   {collapsed ? "→" : "Login"}
                 </Button>
               </Link>
               <Link to="/signup" className="w-full">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full">
+                <Button className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white w-full">
                   {collapsed ? "+" : "Signup"}
                 </Button>
               </Link>

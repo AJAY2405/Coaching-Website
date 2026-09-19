@@ -162,7 +162,7 @@ const Signup = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition duration-300"
+          className="cursor-pointer w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition duration-300"
         >
           {loading ? "Creating Account..." : "Sign Up"}
         </button>

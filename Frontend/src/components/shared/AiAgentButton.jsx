@@ -17,7 +17,7 @@ const AiAgentButton = ({ to = "/chat" }) => {
       type="button"
       onClick={() => navigate(to)}
       aria-label="Open AI assistant"
-      className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full flex items-center justify-center
+      className="cursor-pointer fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full flex items-center justify-center
                  bg-gradient-to-br from-blue-600 to-orange-500 text-white shadow-lg
                  focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300"
       initial={{ scale: 0, opacity: 0 }}

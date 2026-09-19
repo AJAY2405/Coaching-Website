@@ -155,16 +155,7 @@ const buildMessages = (message, history = []) => {
   return messages;
 };
 
-/**
- * Build the student's personal-data tools, scoped to studentId via closure.
- * studentId comes from the authenticated request (req.id) and is NEVER
- * exposed as a model-fillable parameter, so the model can only ever query
- * "my" data, not anyone else's.
- *
- * Returns an empty array for guests (no studentId) -> model gets no tools
- * and falls back to the "you'll need to be logged in" behavior from the
- * system prompt.
- */
+
 const buildStudentTools = (studentId) => {
   if (!studentId) return [];
 
